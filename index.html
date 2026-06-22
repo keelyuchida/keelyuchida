@@ -6,25 +6,23 @@
   <title>Keely Uchida — Brand &amp; Creative Marketing</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #EDF1EE;
-      --bg-alt: #E3EAE5;
-      --dark: #111916;
-      --text: #1A211D;
-      --text-secondary: #5C6E67;
-      --accent: #C9A84C;
-      --accent-dim: #F0E8CB;
-      --border: #CBD4CE;
+      --bg: #F7F5F0;
+      --dark: #16120E;
+      --coral: #E84C3A;
+      --gold: #C9963A;
+      --teal: #2D6359;
+      --panel: #EDEBE5;
+      --text: #16120E;
+      --text-mid: #6B6057;
+      --border: #DDD9D3;
       --font-display: 'Cormorant Garant', Georgia, serif;
       --font-body: 'DM Sans', system-ui, sans-serif;
     }
-
     html { scroll-behavior: smooth; }
-
     body {
       background: var(--bg);
       color: var(--text);
@@ -34,560 +32,351 @@
       overflow-x: hidden;
     }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 48px;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 48px;
       background: var(--bg);
       border-bottom: 1px solid var(--border);
     }
-
     .nav-name {
       font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text);
-      text-decoration: none;
+      font-size: 0.95rem; font-weight: 400;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text); text-decoration: none;
     }
-
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
-
+    .nav-links { display: flex; gap: 28px; list-style: none; }
     .nav-links a {
-      font-size: 0.75rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      text-decoration: none;
-      transition: color 0.2s;
+      font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--text-mid); text-decoration: none; transition: color 0.2s;
     }
+    .nav-links a:hover { color: var(--coral); }
 
-    .nav-links a:hover { color: var(--text); }
-
-    /* ── HERO ── */
+    /* HERO */
     .hero {
       min-height: 100vh;
+      padding: 120px 48px 80px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      padding: 128px 48px 80px;
-      gap: 48px;
-      align-items: end;
+      gap: 64px;
+      align-items: center;
       border-bottom: 1px solid var(--border);
-    }
-
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      gap: 28px;
-    }
-
-    .hero-eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-
-    .hero-name {
-      font-family: var(--font-display);
-      font-size: clamp(68px, 9vw, 136px);
-      font-weight: 300;
-      font-style: italic;
-      line-height: 0.88;
-      color: var(--text);
-    }
-
-    .hero-name .name-last {
-      display: block;
-      padding-left: 0.1em;
-      color: var(--text);
-      -webkit-text-stroke: 1.5px var(--text);
-      color: transparent;
-    }
-
-    .hero-tagline {
-      font-size: 1rem;
-      font-weight: 300;
-      color: var(--text-secondary);
-      max-width: 400px;
-      line-height: 1.75;
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      padding: 13px 30px;
-      background: var(--dark);
-      color: var(--bg);
-      font-family: var(--font-body);
-      font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .btn-primary:hover {
-      background: var(--accent);
-      color: var(--dark);
-    }
-
-    .btn-secondary {
-      display: inline-block;
-      padding: 13px 30px;
-      border: 1px solid var(--text);
-      color: var(--text);
-      font-family: var(--font-body);
-      font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    .btn-secondary:hover {
-      background: var(--text);
-      color: var(--bg);
-    }
-
-    .hero-right {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: flex-end;
-      gap: 20px;
-    }
-
-    .hero-roles {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 6px;
-    }
-
-    .hero-role-item {
-      font-family: var(--font-display);
-      font-size: clamp(18px, 2vw, 28px);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--border);
-      letter-spacing: 0.02em;
-      transition: color 0.3s;
-    }
-
-    .hero-role-item.active { color: var(--text); font-weight: 500; }
-    .hero-role-item:hover { color: var(--text-secondary); }
-
-    .hero-location {
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-    }
-
-    /* ── TICKER ── */
-    .ticker {
-      background: var(--dark);
-      padding: 13px 0;
+      position: relative;
       overflow: hidden;
     }
-
-    .ticker-inner {
-      display: flex;
-      width: max-content;
-      animation: ticker 36s linear infinite;
-    }
-
-    .ticker-item {
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
-      padding: 0 28px;
-      white-space: nowrap;
-    }
-
-    .ticker-item.hi { color: var(--accent); }
-
-    @keyframes ticker {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
-    }
-
-    /* ── STATS ── */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .stat {
-      padding: 48px 36px;
-      border-right: 1px solid var(--border);
-    }
-
-    .stat:last-child { border-right: none; }
-
-    .stat-number {
-      font-family: var(--font-display);
-      font-size: clamp(40px, 4.5vw, 68px);
-      font-weight: 300;
-      line-height: 1;
-      color: var(--text);
-      margin-bottom: 10px;
-    }
-
-    .stat-number em { color: var(--accent); font-style: normal; }
-
-    .stat-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    /* ── SHARED SECTION ── */
-    section { padding: 80px 48px; }
-
-    .section-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 48px;
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .section-label::after {
+    .hero::before {
       content: '';
-      display: block;
-      height: 1px;
-      flex: 1;
-      background: var(--border);
-    }
-
-    /* ── EXPERIENCE ── */
-    .experience { border-bottom: 1px solid var(--border); }
-
-    .exp-item {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 48px;
-      padding: 48px 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .exp-meta { padding-top: 4px; }
-
-    .exp-company {
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      margin-bottom: 8px;
-    }
-
-    .exp-dates {
-      font-size: 0.75rem;
-      color: var(--text-secondary);
-      opacity: 0.6;
-      line-height: 1.5;
-    }
-
-    .exp-title {
-      font-family: var(--font-display);
-      font-size: clamp(22px, 2.5vw, 34px);
-      font-weight: 400;
-      font-style: italic;
-      line-height: 1.15;
-      color: var(--text);
-      margin-bottom: 24px;
-    }
-
-    .exp-bullets {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .exp-bullets li {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      padding-left: 22px;
-      position: relative;
-    }
-
-    .exp-bullets li::before {
-      content: '—';
       position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-size: 0.8rem;
+      top: -20%; right: -10%;
+      width: 55%; height: 120%;
+      background: var(--panel);
+      z-index: 0;
+      transform: skewX(-4deg);
+    }
+    .hero-left { position: relative; z-index: 1; }
+    .hero-eyebrow {
+      font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--coral); margin-bottom: 20px; display: block;
+    }
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(64px, 8.5vw, 130px);
+      font-weight: 300; font-style: italic;
+      line-height: 0.88; color: var(--text);
+      margin-bottom: 28px;
+    }
+    .hero-name .last { display: block; color: var(--coral); }
+    .hero-tagline {
+      font-size: 1rem; color: var(--text-mid);
+      max-width: 420px; line-height: 1.8; margin-bottom: 36px;
+    }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; padding: 13px 30px;
+      font-family: var(--font-body);
+      font-size: 0.72rem; font-weight: 400;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn-dark { background: var(--dark); color: var(--bg); }
+    .btn-dark:hover { background: var(--coral); }
+    .btn-outline { border: 1.5px solid var(--text); color: var(--text); }
+    .btn-outline:hover { background: var(--text); color: var(--bg); }
+    .hero-right {
+      position: relative; z-index: 1;
+      display: flex; flex-direction: column;
+      align-items: flex-start; gap: 12px;
+    }
+    .hero-role {
+      font-family: var(--font-display);
+      font-size: clamp(16px, 1.8vw, 26px);
+      font-weight: 300; font-style: italic;
+      color: var(--border); transition: color 0.3s; cursor: default;
+    }
+    .hero-role.active { color: var(--text); font-weight: 600; }
+    .hero-role:hover { color: var(--text-mid); }
+    .hero-loc {
+      margin-top: 16px;
+      font-size: 0.7rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--text-mid);
     }
 
-    .exp-bullets strong {
-      color: var(--text);
-      font-weight: 400;
-    }
+    /* TICKER */
+    .ticker { background: var(--dark); padding: 12px 0; overflow: hidden; }
+    .ticker-track { display: flex; width: max-content; animation: scroll 38s linear infinite; }
+    .tk { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.3); padding: 0 24px; white-space: nowrap; }
+    .tk.hi { color: var(--coral); opacity: 0.85; }
+    @keyframes scroll { from { transform:translateX(0) } to { transform:translateX(-50%) } }
 
-    /* ── PRESS ── */
-    .press {
+    /* STATS */
+    .stats { display: grid; grid-template-columns: repeat(4,1fr); border-bottom: 1px solid var(--border); }
+    .stat { padding: 44px 32px; border-right: 1px solid var(--border); }
+    .stat:last-child { border-right: none; }
+    .stat-n { font-family: var(--font-display); font-size: clamp(38px, 4vw, 64px); font-weight: 300; line-height: 1; color: var(--text); margin-bottom: 8px; }
+    .stat-n b { color: var(--coral); font-weight: 300; }
+    .stat-l { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-mid); line-height: 1.6; }
+
+    /* ABOUT */
+    .about {
+      padding: 80px 48px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: center;
+      border-bottom: 1px solid var(--border);
       background: var(--dark);
       color: rgba(255,255,255,0.9);
     }
+    .about-label {
+      font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--coral); margin-bottom: 32px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .about-label::after { content: ''; display: block; height: 1px; flex: 1; background: rgba(255,255,255,0.1); }
+    .about-heading {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 4vw, 60px);
+      font-weight: 300; font-style: italic;
+      line-height: 1.1; color: white; margin-bottom: 28px;
+    }
+    .about-body { font-size: 0.95rem; color: rgba(255,255,255,0.65); line-height: 1.85; max-width: 480px; }
+    .about-body p + p { margin-top: 16px; }
+    .about-right { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+    .about-card {
+      padding: 28px 24px;
+      background: rgba(255,255,255,0.04);
+      border-top: 2px solid transparent;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .about-card:hover { background: rgba(255,255,255,0.07); border-top-color: var(--coral); }
+    .about-card-n { font-family: var(--font-display); font-size: 2.2rem; font-weight: 300; color: var(--coral); line-height: 1; margin-bottom: 8px; }
+    .about-card-l { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); line-height: 1.5; }
 
-    .press .section-label { color: var(--accent); }
-    .press .section-label::after { background: rgba(255,255,255,0.1); }
+    /* SECTION SHARED */
+    section { padding: 80px 48px; }
+    .sec-label {
+      font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--coral); margin-bottom: 48px;
+      display: flex; align-items: center; gap: 18px;
+    }
+    .sec-label::after { content: ''; display: block; height: 1px; flex: 1; background: var(--border); }
 
-    .press-grid {
+    /* PORTFOLIO */
+    .portfolio { border-bottom: 1px solid var(--border); }
+    .port-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-    }
-
-    .press-item {
-      padding: 40px 32px;
-      background: rgba(255,255,255,0.03);
-      transition: background 0.2s;
-      cursor: default;
-    }
-
-    .press-item:hover { background: rgba(255,255,255,0.07); }
-
-    .press-type {
-      font-size: 0.65rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.28);
-      margin-bottom: 14px;
-    }
-
-    .press-name {
-      font-family: var(--font-display);
-      font-size: clamp(20px, 2vw, 28px);
-      font-weight: 300;
-      font-style: italic;
-      color: rgba(255,255,255,0.88);
-      line-height: 1.2;
-    }
-
-    /* ── SKILLS ── */
-    .skills { border-bottom: 1px solid var(--border); }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 48px 64px;
-    }
-
-    .skill-group-title {
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      margin-bottom: 14px;
-    }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .skill-tag {
-      padding: 6px 14px;
-      border: 1px solid var(--border);
-      font-size: 0.8rem;
-      color: var(--text);
-      line-height: 1.4;
-      transition: background 0.2s, border-color 0.2s;
-      cursor: default;
-    }
-
-    .skill-tag:hover {
-      background: var(--accent-dim);
-      border-color: var(--accent);
-    }
-
-    /* ── EDUCATION ── */
-    .education {
-      background: var(--bg-alt);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .edu-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 48px;
-    }
-
-    .edu-degree {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      font-weight: 400;
-      font-style: italic;
-      color: var(--text);
-      margin-bottom: 10px;
-      line-height: 1.2;
-    }
-
-    .edu-school {
-      font-size: 0.75rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      margin-bottom: 6px;
-    }
-
-    .edu-detail {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      opacity: 0.7;
-    }
-
-    /* ── CONTACT ── */
-    .contact {
-      text-align: center;
-      padding: 120px 48px;
-    }
-
-    .contact-heading {
-      font-family: var(--font-display);
-      font-size: clamp(48px, 7vw, 100px);
-      font-weight: 300;
-      font-style: italic;
-      line-height: 1;
-      color: var(--text);
-      margin-bottom: 28px;
-    }
-
-    .contact-sub {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      margin-bottom: 48px;
-      letter-spacing: 0.06em;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
       gap: 16px;
-      flex-wrap: wrap;
     }
+    .port-card {
+      display: flex; flex-direction: column;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+      background: var(--bg);
+    }
+    .port-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    }
+    .port-card.span2 { grid-column: span 2; }
 
-    /* ── FOOTER ── */
-    footer {
-      padding: 22px 48px;
-      border-top: 1px solid var(--border);
+    /* Color block visual for each card */
+    .port-visual {
+      width: 100%;
+      aspect-ratio: 4/3;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
     }
+    .port-visual.tall { aspect-ratio: 3/4; }
+    .port-visual.wide { aspect-ratio: 16/7; }
 
-    .footer-name {
+    .port-visual::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.55) 100%);
+      z-index: 1;
+    }
+    .pv-coral { background: linear-gradient(135deg, #C23525 0%, #E84C3A 50%, #F07060 100%); }
+    .pv-dark  { background: linear-gradient(135deg, #0D0B08 0%, #2A1F18 100%); }
+    .pv-teal  { background: linear-gradient(135deg, #1A3D37 0%, #2D6359 50%, #3D8070 100%); }
+    .pv-gold  { background: linear-gradient(135deg, #6B4A10 0%, #C9963A 100%); }
+    .pv-navy  { background: linear-gradient(135deg, #0F1E2B 0%, #1E3A4F 100%); }
+    .pv-slate { background: linear-gradient(135deg, #2A2826 0%, #4A4440 100%); }
+
+    /* Decorative number in the background */
+    .port-visual-num {
+      position: absolute;
+      top: 16px; right: 24px;
       font-family: var(--font-display);
-      font-size: 0.95rem;
-      font-style: italic;
-      color: var(--text-secondary);
+      font-size: 6rem; font-weight: 300; font-style: italic;
+      color: rgba(255,255,255,0.07);
+      line-height: 1;
+      z-index: 0;
+      user-select: none;
     }
 
-    .footer-copy {
-      font-size: 0.72rem;
-      color: var(--text-secondary);
-      opacity: 0.5;
+    .port-visual-title {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 2.5vw, 36px);
+      font-weight: 300; font-style: italic;
+      color: white; line-height: 1.15;
+      position: relative; z-index: 2;
+    }
+    .port-visual-sub {
+      font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(255,255,255,0.45); margin-top: 8px;
+      position: relative; z-index: 2;
     }
 
-    /* ── FADE IN ── */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(18px);
-      animation: fadeIn 0.9s ease forwards;
+    .port-body { padding: 20px 24px 24px; flex: 1; display: flex; flex-direction: column; }
+    .port-tag {
+      display: inline-block;
+      font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 3px 10px; margin-bottom: 10px;
+      color: white;
     }
-    .fade-in:nth-child(1) { animation-delay: 0.05s; }
-    .fade-in:nth-child(2) { animation-delay: 0.2s; }
-    .fade-in:nth-child(3) { animation-delay: 0.38s; }
-    .fade-in:nth-child(4) { animation-delay: 0.52s; }
-    .fade-in:nth-child(5) { animation-delay: 0.62s; }
+    .pt-coral { background: var(--coral); }
+    .pt-teal  { background: var(--teal); }
+    .pt-gold  { background: var(--gold); }
+    .port-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem; font-weight: 400; font-style: italic;
+      color: var(--text); line-height: 1.2; margin-bottom: 8px;
+    }
+    .port-desc { font-size: 0.82rem; color: var(--text-mid); line-height: 1.65; flex: 1; }
+    .port-cta {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 16px;
+      font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--coral); font-weight: 400;
+      text-decoration: none;
+    }
+    .port-cta::after { content: '↗'; font-size: 0.85rem; transition: transform 0.2s; }
+    .port-card:hover .port-cta::after { transform: translate(2px, -2px); }
 
-    @keyframes fadeIn {
-      to { opacity: 1; transform: translateY(0); }
-    }
+    /* EXPERIENCE */
+    .experience { border-bottom: 1px solid var(--border); }
+    .exp-item { display: grid; grid-template-columns: 200px 1fr; gap: 48px; padding: 48px 0; border-top: 1px solid var(--border); }
+    .exp-co { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-mid); margin-bottom: 8px; }
+    .exp-dates { font-size: 0.75rem; color: var(--text-mid); opacity: 0.6; }
+    .exp-title { font-family: var(--font-display); font-size: clamp(20px, 2.3vw, 32px); font-weight: 400; font-style: italic; line-height: 1.15; color: var(--text); margin-bottom: 22px; }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .exp-bullets li { font-size: 0.88rem; color: var(--text-mid); line-height: 1.72; padding-left: 20px; position: relative; }
+    .exp-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--coral); font-size: 0.8rem; }
+    .exp-bullets strong { color: var(--text); font-weight: 400; }
+
+    /* PRESS */
+    .press { background: var(--dark); border-bottom: 1px solid #000; }
+    .press .sec-label { color: var(--coral); }
+    .press .sec-label::after { background: rgba(255,255,255,0.1); }
+    .press-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+    .press-item { padding: 36px 28px; background: rgba(255,255,255,0.03); transition: all 0.2s; border-top: 2px solid transparent; cursor: default; }
+    .press-item:hover { background: rgba(255,255,255,0.07); border-top-color: var(--coral); }
+    .press-type { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 12px; }
+    .press-name { font-family: var(--font-display); font-size: clamp(18px, 1.8vw, 26px); font-weight: 300; font-style: italic; color: rgba(255,255,255,0.85); line-height: 1.2; }
+
+    /* SKILLS */
+    .skills { background: var(--panel); border-bottom: 1px solid var(--border); }
+    .skills-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 48px 64px; }
+    .skill-group-title { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-mid); margin-bottom: 14px; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-tag { padding: 6px 14px; border: 1px solid var(--border); font-size: 0.78rem; color: var(--text); background: var(--bg); transition: all 0.2s; cursor: default; }
+    .skill-tag:hover { background: var(--coral); border-color: var(--coral); color: white; }
+
+    /* EDUCATION */
+    .education { border-bottom: 1px solid var(--border); }
+    .edu-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 48px; }
+    .edu-degree { font-family: var(--font-display); font-size: 1.35rem; font-weight: 400; font-style: italic; color: var(--text); margin-bottom: 10px; line-height: 1.2; }
+    .edu-school { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-mid); margin-bottom: 6px; }
+    .edu-detail { font-size: 0.83rem; color: var(--text-mid); opacity: 0.7; }
+
+    /* CONTACT */
+    .contact { text-align: center; padding: 120px 48px; }
+    .contact h2 { font-family: var(--font-display); font-size: clamp(48px, 7vw, 96px); font-weight: 300; font-style: italic; line-height: 1; color: var(--text); margin-bottom: 24px; }
+    .contact h2 span { color: var(--coral); }
+    .contact-sub { font-size: 0.85rem; color: var(--text-mid); margin-bottom: 44px; letter-spacing: 0.05em; }
+    .contact-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+    /* FOOTER */
+    footer { padding: 20px 48px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    .footer-name { font-family: var(--font-display); font-size: 0.9rem; font-style: italic; color: var(--text-mid); }
+    .footer-copy { font-size: 0.7rem; color: var(--text-mid); opacity: 0.5; }
+
+    /* FADE */
+    .fade { opacity: 0; transform: translateY(16px); animation: fi 0.9s ease forwards; }
+    .fade:nth-child(1) { animation-delay: 0.05s; }
+    .fade:nth-child(2) { animation-delay: 0.2s; }
+    .fade:nth-child(3) { animation-delay: 0.35s; }
+    .fade:nth-child(4) { animation-delay: 0.5s; }
+    .fade:nth-child(5) { animation-delay: 0.62s; }
+    @keyframes fi { to { opacity:1; transform:translateY(0); } }
 
     @media (prefers-reduced-motion: reduce) {
-      .fade-in { animation: none; opacity: 1; transform: none; }
-      .ticker-inner { animation: none; }
+      .fade { animation: none; opacity: 1; transform: none; }
+      .ticker-track { animation: none; }
     }
 
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media (max-width: 900px) {
       nav { padding: 16px 24px; }
-      .nav-links { gap: 20px; }
-
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 100px 24px 60px;
-        min-height: auto;
-      }
-      .hero-right { align-items: flex-start; }
-      .hero-roles { align-items: flex-start; }
-
-      .stats { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { gap: 16px; }
+      .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; min-height: auto; }
+      .hero::before { display: none; }
+      .about { grid-template-columns: 1fr; padding: 60px 24px; }
+      .stats { grid-template-columns: repeat(2,1fr); }
       .stat:nth-child(2) { border-right: none; }
       .stat:nth-child(3) { border-top: 1px solid var(--border); border-right: 1px solid var(--border); }
       .stat:nth-child(4) { border-top: 1px solid var(--border); border-right: none; }
-
-      section { padding: 60px 24px; }
-
+      section { padding: 56px 24px; }
+      .port-grid { grid-template-columns: 1fr 1fr; }
+      .port-card.span2 { grid-column: span 2; }
       .exp-item { grid-template-columns: 1fr; gap: 12px; }
-
-      .press-grid { grid-template-columns: 1fr 1fr; }
-
       .skills-grid { grid-template-columns: 1fr; }
-
       .edu-grid { grid-template-columns: 1fr; }
-
+      .press-grid { grid-template-columns: 1fr 1fr; }
       footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px 24px; }
     }
-
     @media (max-width: 560px) {
       .nav-links { display: none; }
+      .port-grid { grid-template-columns: 1fr; }
+      .port-card.span2 { grid-column: span 1; }
       .press-grid { grid-template-columns: 1fr; }
-      .stats { grid-template-columns: repeat(2, 1fr); }
+      .about-right { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <a href="#" class="nav-name">Keely Uchida</a>
     <ul class="nav-links">
-      <li><a href="#experience">Work</a></li>
-      <li><a href="#press">Press</a></li>
+      <li><a href="#portfolio">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -596,167 +385,240 @@
   <!-- HERO -->
   <div class="hero">
     <div class="hero-left">
-      <p class="hero-eyebrow fade-in">Brand &amp; Creative Marketing</p>
-      <h1 class="hero-name fade-in">
-        Keely<span class="name-last">Uchida</span>
-      </h1>
-      <p class="hero-tagline fade-in">Brand strategist and creative communicator crafting stories that move people — from arts institutions to commercial stages to international editorial.</p>
-      <div class="hero-cta fade-in">
-        <a href="#contact" class="btn-primary">Get in Touch</a>
-        <a href="#experience" class="btn-secondary">View Work</a>
+      <span class="hero-eyebrow fade">Brand &amp; Creative Marketing</span>
+      <h1 class="hero-name fade">Keely<span class="last">Uchida</span></h1>
+      <p class="hero-tagline fade">Strategist, storyteller, and creative director who builds brands people feel — from arts institutions to commercial stages to international editorial.</p>
+      <div class="hero-cta fade">
+        <a href="#portfolio" class="btn btn-dark">View Work</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
       </div>
     </div>
     <div class="hero-right">
-      <div class="hero-roles fade-in">
-        <span class="hero-role-item">Brand Strategy</span>
-        <span class="hero-role-item active">Content &amp; Social</span>
-        <span class="hero-role-item">Executive Comms</span>
-        <span class="hero-role-item">Event Marketing</span>
-        <span class="hero-role-item">Creative Direction</span>
-      </div>
-      <p class="hero-location fade-in">Los Angeles, CA</p>
+      <span class="hero-role fade">Brand Strategy</span>
+      <span class="hero-role active fade">Content &amp; Social</span>
+      <span class="hero-role fade">Executive Comms</span>
+      <span class="hero-role fade">Event Marketing</span>
+      <span class="hero-role fade">Creative Direction</span>
+      <p class="hero-loc fade">Los Angeles, CA</p>
     </div>
   </div>
 
   <!-- TICKER -->
   <div class="ticker" aria-hidden="true">
-    <div class="ticker-inner">
-      <span class="ticker-item hi">CalArts</span><span class="ticker-item">·</span>
-      <span class="ticker-item">Amazon</span><span class="ticker-item">·</span>
-      <span class="ticker-item hi">Man About Town UK</span><span class="ticker-item">·</span>
-      <span class="ticker-item">John Legend</span><span class="ticker-item">·</span>
-      <span class="ticker-item hi">Flaunt</span><span class="ticker-item">·</span>
-      <span class="ticker-item">Chance Perdomo</span><span class="ticker-item">·</span>
-      <span class="ticker-item hi">Hunger Magazine</span><span class="ticker-item">·</span>
-      <span class="ticker-item">RollaCoaster</span><span class="ticker-item">·</span>
-      <span class="ticker-item hi">Johns Hopkins</span><span class="ticker-item">·</span>
-      <span class="ticker-item">Paul W. Downs</span><span class="ticker-item">·</span>
-      <span class="ticker-item hi">Justin H. Min</span><span class="ticker-item">·</span>
-      <span class="ticker-item">Reolink</span><span class="ticker-item">·</span>
-      <!-- duplicate for seamless loop -->
-      <span class="ticker-item hi">CalArts</span><span class="ticker-item">·</span>
-      <span class="ticker-item">Amazon</span><span class="ticker-item">·</span>
-      <span class="ticker-item hi">Man About Town UK</span><span class="ticker-item">·</span>
-      <span class="ticker-item">John Legend</span><span class="ticker-item">·</span>
-      <span class="ticker-item hi">Flaunt</span><span class="ticker-item">·</span>
-      <span class="ticker-item">Chance Perdomo</span><span class="ticker-item">·</span>
-      <span class="ticker-item hi">Hunger Magazine</span><span class="ticker-item">·</span>
-      <span class="ticker-item">RollaCoaster</span><span class="ticker-item">·</span>
-      <span class="ticker-item hi">Johns Hopkins</span><span class="ticker-item">·</span>
-      <span class="ticker-item">Paul W. Downs</span><span class="ticker-item">·</span>
-      <span class="ticker-item hi">Justin H. Min</span><span class="ticker-item">·</span>
-      <span class="ticker-item">Reolink</span><span class="ticker-item">·</span>
+    <div class="ticker-track">
+      <span class="tk hi">CalArts</span><span class="tk">·</span>
+      <span class="tk">Amazon</span><span class="tk">·</span>
+      <span class="tk hi">Man About Town UK</span><span class="tk">·</span>
+      <span class="tk">John Legend</span><span class="tk">·</span>
+      <span class="tk hi">Flaunt</span><span class="tk">·</span>
+      <span class="tk">Chance Perdomo</span><span class="tk">·</span>
+      <span class="tk hi">Hunger Magazine</span><span class="tk">·</span>
+      <span class="tk">RollaCoaster</span><span class="tk">·</span>
+      <span class="tk hi">Johns Hopkins</span><span class="tk">·</span>
+      <span class="tk">Paul W. Downs</span><span class="tk">·</span>
+      <span class="tk hi">Justin H. Min</span><span class="tk">·</span>
+      <span class="tk">Reolink</span><span class="tk">·</span>
+      <span class="tk hi">CalArts</span><span class="tk">·</span>
+      <span class="tk">Amazon</span><span class="tk">·</span>
+      <span class="tk hi">Man About Town UK</span><span class="tk">·</span>
+      <span class="tk">John Legend</span><span class="tk">·</span>
+      <span class="tk hi">Flaunt</span><span class="tk">·</span>
+      <span class="tk">Chance Perdomo</span><span class="tk">·</span>
+      <span class="tk hi">Hunger Magazine</span><span class="tk">·</span>
+      <span class="tk">RollaCoaster</span><span class="tk">·</span>
+      <span class="tk hi">Johns Hopkins</span><span class="tk">·</span>
+      <span class="tk">Paul W. Downs</span><span class="tk">·</span>
+      <span class="tk hi">Justin H. Min</span><span class="tk">·</span>
+      <span class="tk">Reolink</span><span class="tk">·</span>
     </div>
   </div>
 
   <!-- STATS -->
   <div class="stats">
-    <div class="stat">
-      <div class="stat-number">30<em>%+</em></div>
-      <div class="stat-label">Follower<br>Growth</div>
+    <div class="stat"><div class="stat-n">30<b>%+</b></div><div class="stat-l">Follower<br>Growth</div></div>
+    <div class="stat"><div class="stat-n">17<b>%</b></div><div class="stat-l">YoY Enrollment<br>Growth</div></div>
+    <div class="stat"><div class="stat-n">$1.2<b>M+</b></div><div class="stat-l">Donor-Funded<br>Initiatives</div></div>
+    <div class="stat"><div class="stat-n">20<b>+</b></div><div class="stat-l">Commercial &amp;<br>Editorial Productions</div></div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="about">
+    <div>
+      <p class="about-label">About</p>
+      <h2 class="about-heading">I make brands feel like something.</h2>
+      <div class="about-body">
+        <p>I started as a dancer — trained at CalArts, performed on commercial sets and editorial shoots, and learned early that the most powerful communication happens when something moves you. That instinct carried straight into my marketing work.</p>
+        <p>At CalArts, I built campaigns that drove real enrollment growth, managed donor-funded initiatives in the millions, and led a content team from the ground up. On the side, I've directed movement for Amazon, appeared in international editorial, and collaborated with artists you know.</p>
+        <p>I'm a strategist who can execute and a creative who can back it up with data. That's a rare combination — and exactly what I bring to every room I'm in.</p>
+      </div>
     </div>
-    <div class="stat">
-      <div class="stat-number">17<em>%</em></div>
-      <div class="stat-label">YoY Enrollment<br>Growth</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number">$1.2<em>M+</em></div>
-      <div class="stat-label">Donor-Funded<br>Initiatives</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number">20<em>+</em></div>
-      <div class="stat-label">Commercial &amp;<br>Editorial Productions</div>
+    <div class="about-right">
+      <div class="about-card"><div class="about-card-n">30%+</div><div class="about-card-l">Instagram follower growth at CalArts</div></div>
+      <div class="about-card"><div class="about-card-n">17%</div><div class="about-card-l">YoY enrollment growth via digital campaigns</div></div>
+      <div class="about-card"><div class="about-card-n">10+</div><div class="about-card-l">International publications featured in</div></div>
+      <div class="about-card"><div class="about-card-n">MA</div><div class="about-card-l">Johns Hopkins, Digital Communication</div></div>
     </div>
   </div>
 
+  <!-- PORTFOLIO -->
+  <section class="portfolio" id="portfolio">
+    <p class="sec-label">Selected Work</p>
+    <div class="port-grid">
+
+      <a class="port-card" href="#" target="_blank">
+        <div class="port-visual pv-coral">
+          <span class="port-visual-num">01</span>
+          <p class="port-visual-title">Find Your People</p>
+          <p class="port-visual-sub">CalArts Dance · Brand &amp; Social Campaign</p>
+        </div>
+        <div class="port-body">
+          <span class="port-tag pt-coral">Brand &amp; Social</span>
+          <p class="port-title">Find Your People — CalArts Dance</p>
+          <p class="port-desc">Social-first admissions campaign for CalArts School of Dance. Content direction, copywriting, and visual production — driving 30%+ follower growth and 17% YoY enrollment increase.</p>
+          <span class="port-cta">View Project</span>
+        </div>
+      </a>
+
+      <a class="port-card" href="#" target="_blank">
+        <div class="port-visual pv-dark">
+          <span class="port-visual-num">02</span>
+          <p class="port-visual-title">Trained to Break the Mold</p>
+          <p class="port-visual-sub">CalArts Dance · Social Media Campaign Strategy</p>
+        </div>
+        <div class="port-body">
+          <span class="port-tag pt-coral">Campaign Strategy</span>
+          <p class="port-title">Trained to Break the Mold — CalArts Dance</p>
+          <p class="port-desc">Full 20-page social media campaign plan for the 2026–27 admissions cycle. SMART objectives, platform strategy, content calendar, competitive analysis, and real Instagram analytics data.</p>
+          <span class="port-cta">View Project</span>
+        </div>
+      </a>
+
+      <a class="port-card" href="#" target="_blank">
+        <div class="port-visual pv-gold">
+          <span class="port-visual-num">03</span>
+          <p class="port-visual-title">Super Bowl Campaign</p>
+          <p class="port-visual-sub">Boudin Bakery · Email Marketing Series</p>
+        </div>
+        <div class="port-body">
+          <span class="port-tag pt-gold">Email Marketing</span>
+          <p class="port-title">Super Bowl LIX Campaign — Boudin Bakery</p>
+          <p class="port-desc">3-email drip campaign for Boudin's limited-edition Super Bowl sourdough launch. Concept, copy, and layout — featuring George Kittle and San Francisco brand heritage.</p>
+          <span class="port-cta">View Project</span>
+        </div>
+      </a>
+
+      <a class="port-card span2" href="#" target="_blank">
+        <div class="port-visual pv-teal wide">
+          <span class="port-visual-num">04</span>
+          <p class="port-visual-title">Luxury Residential Brand Launch</p>
+          <p class="port-visual-sub">Santa Monica, CA · Audience Insights &amp; Creative Brief</p>
+        </div>
+        <div class="port-body">
+          <span class="port-tag pt-teal">Brand Strategy</span>
+          <p class="port-title">Santa Monica Luxury Apartments — Creative Brief</p>
+          <p class="port-desc">Full audience insights report and creative brief for a luxury apartment launch in Santa Monica. SWOT analysis, competitor positioning, target audience profiles, and brand messaging strategy for a new market entry.</p>
+          <span class="port-cta">View Project</span>
+        </div>
+      </a>
+
+      <a class="port-card" href="#" target="_blank">
+        <div class="port-visual pv-navy">
+          <span class="port-visual-num">05</span>
+          <p class="port-visual-title">Client Proposal &amp; Strategic Plan</p>
+          <p class="port-visual-sub">Social Media Strategy</p>
+        </div>
+        <div class="port-body">
+          <span class="port-tag pt-teal">Strategy &amp; Writing</span>
+          <p class="port-title">Client Proposal &amp; Social Media Plan</p>
+          <p class="port-desc">Research-backed client proposal and social media strategic plan — full-funnel thinking from audience analysis to content execution and measurement frameworks.</p>
+          <span class="port-cta">View Project</span>
+        </div>
+      </a>
+
+      <a class="port-card" href="#" target="_blank">
+        <div class="port-visual pv-slate">
+          <span class="port-visual-num">06</span>
+          <p class="port-visual-title">Emergent Forms</p>
+          <p class="port-visual-sub">CalArts Dance · Event Launch Poster</p>
+        </div>
+        <div class="port-body">
+          <span class="port-tag pt-coral">Creative Design</span>
+          <p class="port-title">Emergent Forms — BFA4 Capstone Poster</p>
+          <p class="port-desc">Event launch poster for CalArts School of Dance's BFA4 capstone performance at REDCAT. Typography direction, visual composition, and print-ready design for May 2026.</p>
+          <span class="port-cta">View Project</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
   <!-- EXPERIENCE -->
   <section class="experience" id="experience">
-    <p class="section-label">Experience</p>
-
+    <p class="sec-label">Experience</p>
     <div class="exp-item">
-      <div class="exp-meta">
-        <p class="exp-company">California Institute of the Arts</p>
-        <p class="exp-dates">Aug 2022 – Present<br>Valencia, CA</p>
+      <div>
+        <p class="exp-co">California Institute of the Arts</p>
+        <p class="exp-dates">Aug 2022 – Present · Valencia, CA</p>
       </div>
-      <div class="exp-content">
+      <div>
         <h2 class="exp-title">Social Media &amp; Content Strategy Manager</h2>
         <ul class="exp-bullets">
-          <li>Spearheaded university-wide brand communications across Instagram and Facebook, growing the total follower base <strong>30%+</strong> and driving a <strong>17% YoY enrollment growth</strong> through targeted digital campaigns.</li>
-          <li>Developed and executed platform-specific content calendars, producing <strong>100+ posts per year</strong> aligned with institutional milestones, brand moments, and recruitment cycles.</li>
-          <li>Managed paid campaigns across Meta Ads and Google Ads — setting KPIs, tracking performance metrics, and iterating creative based on engagement and conversion data.</li>
-          <li>Built and led a digital content and marketing team, establishing performance benchmarks, community management protocols, and a data-driven content strategy that strengthened brand positioning.</li>
+          <li>Spearheaded university-wide brand communications across Instagram and Facebook, growing the follower base <strong>30%+</strong> and driving <strong>17% YoY enrollment growth</strong> through targeted digital campaigns.</li>
+          <li>Developed platform-specific content calendars, producing <strong>100+ posts per year</strong> aligned with institutional milestones, brand moments, and recruitment cycles.</li>
+          <li>Managed paid campaigns across Meta Ads and Google Ads — setting KPIs, tracking performance, and iterating creative based on engagement and conversion data.</li>
+          <li>Built and led a digital content and marketing team, establishing performance benchmarks, community management protocols, and a data-driven content strategy.</li>
         </ul>
       </div>
     </div>
-
     <div class="exp-item">
-      <div class="exp-meta">
-        <p class="exp-company">California Institute of the Arts</p>
-        <p class="exp-dates">Aug 2022 – Present<br>Valencia, CA</p>
+      <div>
+        <p class="exp-co">California Institute of the Arts</p>
+        <p class="exp-dates">Aug 2022 – Present · Valencia, CA</p>
       </div>
-      <div class="exp-content">
+      <div>
         <h2 class="exp-title">Executive Communications Manager</h2>
         <ul class="exp-bullets">
-          <li>Orchestrated event planning for CalArts Dance performances — front-of-house to backstage — managing guest-of-honor logistics, ticketing, catering, travel, and budgets end-to-end.</li>
+          <li>Orchestrated event planning for CalArts Dance performances — front-of-house to backstage — managing guest logistics, ticketing, catering, travel, and budgets end-to-end.</li>
           <li>Served as primary liaison between executive leadership and external partners, improving coordination across <strong>6+ academic and administrative departments</strong>.</li>
           <li>Supported <strong>$1.2M+ in donor-funded initiatives</strong> through strategic communications, program planning, and development alignment.</li>
           <li>Partnered with the Provost's Office on retention-focused outreach, improving engagement through clearer digital and social communication.</li>
         </ul>
       </div>
     </div>
-
     <div class="exp-item">
-      <div class="exp-meta">
-        <p class="exp-company">Freelance</p>
+      <div>
+        <p class="exp-co">Freelance</p>
         <p class="exp-dates">Jan 2022 – Present</p>
       </div>
-      <div class="exp-content">
+      <div>
         <h2 class="exp-title">Movement Director &amp; On-Camera Performance Specialist</h2>
         <ul class="exp-bullets">
-          <li>Represented brands and talent across <strong>20+ commercial and editorial productions</strong>, with clients including John Legend, Paul W. Downs, Chance Perdomo, and Justin H. Min.</li>
-          <li>Captured and delivered social-ready content for commercial shoots with <strong>Amazon</strong> (Pet Day 2023) and Reolink.</li>
-          <li>Contributed to campaigns featured in <strong>10+ international publications</strong> — Man About Town UK, RollaCoaster, Hunger, and Flaunt — pitching visual narratives to luxury and lifestyle audiences.</li>
+          <li>Represented brands and talent across <strong>20+ commercial and editorial productions</strong> with clients including John Legend, Paul W. Downs, Chance Perdomo, and Justin H. Min.</li>
+          <li>Captured social-ready content for commercial shoots with <strong>Amazon</strong> (Pet Day 2023) and Reolink.</li>
+          <li>Contributed to campaigns featured in <strong>10+ international publications</strong> — Man About Town UK, RollaCoaster, Hunger, and Flaunt.</li>
         </ul>
       </div>
     </div>
   </section>
 
   <!-- PRESS -->
-  <section class="press" id="press">
-    <p class="section-label">Featured In &amp; Worked With</p>
+  <section class="press">
+    <p class="sec-label">Featured In &amp; Worked With</p>
     <div class="press-grid">
-      <div class="press-item">
-        <p class="press-type">Editorial</p>
-        <p class="press-name">Man About Town UK</p>
-      </div>
-      <div class="press-item">
-        <p class="press-type">Editorial</p>
-        <p class="press-name">Hunger Magazine</p>
-      </div>
-      <div class="press-item">
-        <p class="press-type">Editorial</p>
-        <p class="press-name">RollaCoaster</p>
-      </div>
-      <div class="press-item">
-        <p class="press-type">Editorial</p>
-        <p class="press-name">Flaunt</p>
-      </div>
-      <div class="press-item">
-        <p class="press-type">Brand Campaign</p>
-        <p class="press-name">Amazon</p>
-      </div>
-      <div class="press-item">
-        <p class="press-type">Brand Campaign</p>
-        <p class="press-name">Reolink</p>
-      </div>
+      <div class="press-item"><p class="press-type">Editorial</p><p class="press-name">Man About Town UK</p></div>
+      <div class="press-item"><p class="press-type">Editorial</p><p class="press-name">Hunger Magazine</p></div>
+      <div class="press-item"><p class="press-type">Editorial</p><p class="press-name">RollaCoaster</p></div>
+      <div class="press-item"><p class="press-type">Editorial</p><p class="press-name">Flaunt</p></div>
+      <div class="press-item"><p class="press-type">Brand Campaign</p><p class="press-name">Amazon</p></div>
+      <div class="press-item"><p class="press-type">Brand Campaign</p><p class="press-name">Reolink</p></div>
     </div>
   </section>
 
   <!-- SKILLS -->
   <section class="skills" id="skills">
-    <p class="section-label">Skills</p>
+    <p class="sec-label">Skills</p>
     <div class="skills-grid">
-      <div class="skill-group">
+      <div>
         <p class="skill-group-title">Marketing &amp; Community</p>
         <div class="skill-tags">
           <span class="skill-tag">Event Planning</span>
@@ -767,7 +629,7 @@
           <span class="skill-tag">Public Speaking</span>
         </div>
       </div>
-      <div class="skill-group">
+      <div>
         <p class="skill-group-title">Social &amp; Content</p>
         <div class="skill-tags">
           <span class="skill-tag">Social Media Strategy</span>
@@ -778,7 +640,7 @@
           <span class="skill-tag">Messaging Frameworks</span>
         </div>
       </div>
-      <div class="skill-group">
+      <div>
         <p class="skill-group-title">Advertising &amp; Analytics</p>
         <div class="skill-tags">
           <span class="skill-tag">Meta Ads Manager</span>
@@ -790,7 +652,7 @@
           <span class="skill-tag">Hootsuite</span>
         </div>
       </div>
-      <div class="skill-group">
+      <div>
         <p class="skill-group-title">Tools &amp; Design</p>
         <div class="skill-tags">
           <span class="skill-tag">Adobe Creative Suite</span>
@@ -806,14 +668,14 @@
 
   <!-- EDUCATION -->
   <section class="education">
-    <p class="section-label">Education</p>
+    <p class="sec-label">Education</p>
     <div class="edu-grid">
-      <div class="edu-item">
+      <div>
         <p class="edu-degree">Master of Arts in Communication</p>
         <p class="edu-school">Johns Hopkins University</p>
         <p class="edu-detail">Digital Communication</p>
       </div>
-      <div class="edu-item">
+      <div>
         <p class="edu-degree">Bachelor of Fine Arts in Dance</p>
         <p class="edu-school">California Institute of the Arts</p>
         <p class="edu-detail">Minor in Science &amp; Math · Specialization: Production Management</p>
@@ -823,15 +685,14 @@
 
   <!-- CONTACT -->
   <section class="contact" id="contact">
-    <h2 class="contact-heading">Let's work together.</h2>
+    <h2>Let's work <span>together.</span></h2>
     <p class="contact-sub">keelyuchida@gmail.com &nbsp;·&nbsp; 808-304-2723</p>
     <div class="contact-links">
-      <a href="mailto:keelyuchida@gmail.com" class="btn-primary">Send an Email</a>
-      <a href="https://www.linkedin.com/in/keelyuchida" class="btn-secondary" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:keelyuchida@gmail.com" class="btn btn-dark">Send an Email</a>
+      <a href="https://www.linkedin.com/in/keelyuchida" class="btn btn-outline" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <span class="footer-name">Keely Uchida</span>
     <span class="footer-copy">© 2026 · Brand &amp; Creative Marketing</span>
