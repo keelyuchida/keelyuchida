@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work Samples — Keely Uchida</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #F7F5F0;
+      --dark: #16120E;
+      --coral: #E84C3A;
+      --gold: #C9963A;
+      --teal: #2D6359;
+      --panel: #EDEBE5;
+      --text: #16120E;
+      --text-mid: #6B6057;
+      --border: #DDD9D3;
+      --font-display: 'Cormorant Garant', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 48px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-name {
+      font-family: var(--font-display);
+      font-size: 0.95rem; font-weight: 400;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text); text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--text-mid); text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--coral); }
+    .nav-links a.active { color: var(--coral); }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding: 120px 48px 64px;
+      border-bottom: 1px solid var(--border);
+      background: var(--dark);
+    }
+    .page-header-eyebrow {
+      font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--coral); margin-bottom: 16px; display: block;
+    }
+    .page-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(52px, 7vw, 100px);
+      font-weight: 300; font-style: italic;
+      line-height: 0.9; color: white;
+    }
+    .page-header h1 span { color: var(--coral); }
+    .page-header-sub {
+      margin-top: 24px;
+      font-size: 0.9rem; color: rgba(255,255,255,0.45);
+      max-width: 560px; line-height: 1.75;
+    }
+
+    /* FILTER BAR */
+    .filter-bar {
+      padding: 24px 48px;
+      border-bottom: 1px solid var(--border);
+      display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+    }
+    .filter-label {
+      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--text-mid); margin-right: 8px;
+    }
+    .filter-btn {
+      padding: 6px 16px;
+      font-family: var(--font-body);
+      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+      border: 1px solid var(--border);
+      background: transparent; color: var(--text-mid);
+      cursor: pointer; transition: all 0.2s;
+    }
+    .filter-btn:hover { border-color: var(--coral); color: var(--coral); }
+    .filter-btn.on { background: var(--coral); border-color: var(--coral); color: white; }
+
+    /* GRID */
+    .grid-wrap { padding: 48px; }
+    .samples-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .sample-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      text-decoration: none;
+      display: flex; flex-direction: column;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .sample-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+    .sample-card.wide { grid-column: span 2; }
+
+    .sample-visual {
+      width: 100%; aspect-ratio: 16/9;
+      display: flex; flex-direction: column;
+      justify-content: flex-end; padding: 24px;
+      position: relative; overflow: hidden;
+    }
+    .sample-card.wide .sample-visual { aspect-ratio: 21/9; }
+    .sample-visual::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 20%, rgba(0,0,0,0.65) 100%);
+      z-index: 1;
+    }
+    .sv-coral { background: linear-gradient(135deg, #C23525, #E84C3A, #F07060); }
+    .sv-dark  { background: linear-gradient(135deg, #0D0B08, #2A1F18); }
+    .sv-gold  { background: linear-gradient(135deg, #6B4A10, #C9963A); }
+    .sv-teal  { background: linear-gradient(135deg, #1A3D37, #2D6359, #3D8070); }
+    .sv-navy  { background: linear-gradient(135deg, #0F1E2B, #1E3A4F); }
+    .sv-slate { background: linear-gradient(135deg, #2A2826, #4A4440); }
+
+    .sample-visual-tag {
+      position: absolute; top: 16px; left: 16px; z-index: 2;
+      font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 3px 10px; color: white;
+    }
+    .svt-coral { background: var(--coral); }
+    .svt-gold  { background: var(--gold); }
+    .svt-teal  { background: var(--teal); }
+
+    .sample-num {
+      position: absolute; top: 12px; right: 20px; z-index: 0;
+      font-family: var(--font-display);
+      font-size: 5rem; font-weight: 300; font-style: italic;
+      color: rgba(255,255,255,0.06); line-height: 1; user-select: none;
+    }
+    .sample-visual-title {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 2vw, 28px);
+      font-weight: 300; font-style: italic;
+      color: white; line-height: 1.15;
+      position: relative; z-index: 2;
+    }
+    .sample-visual-sub {
+      font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(255,255,255,0.4); margin-top: 6px;
+      position: relative; z-index: 2;
+    }
+    .sample-body { padding: 18px 20px 20px; flex: 1; display: flex; flex-direction: column; }
+    .sample-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem; font-weight: 400; font-style: italic;
+      color: var(--text); line-height: 1.2; margin-bottom: 6px;
+    }
+    .sample-desc { font-size: 0.8rem; color: var(--text-mid); line-height: 1.65; flex: 1; }
+    .sample-cta {
+      display: inline-flex; align-items: center; gap: 5px;
+      margin-top: 14px;
+      font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--coral); font-weight: 400;
+    }
+    .sample-cta::after { content: '↗'; transition: transform 0.2s; }
+    .sample-card:hover .sample-cta::after { transform: translate(2px,-2px); }
+
+    /* CONTACT STRIP */
+    .contact-strip {
+      background: var(--coral); padding: 48px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 24px;
+    }
+    .contact-strip-text {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3.5vw, 48px);
+      font-weight: 300; font-style: italic; color: white;
+    }
+    .contact-strip-links { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-white {
+      display: inline-block; padding: 12px 28px;
+      font-family: var(--font-body); font-size: 0.72rem;
+      font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase;
+      text-decoration: none; transition: all 0.2s;
+      background: white; color: var(--coral);
+    }
+    .btn-white:hover { background: var(--dark); color: white; }
+    .btn-white-outline {
+      display: inline-block; padding: 12px 28px;
+      font-family: var(--font-body); font-size: 0.72rem;
+      font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase;
+      text-decoration: none; transition: all 0.2s;
+      border: 1.5px solid white; color: white;
+    }
+    .btn-white-outline:hover { background: white; color: var(--coral); }
+
+    /* FOOTER */
+    footer {
+      padding: 20px 48px; border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      background: var(--bg);
+    }
+    .footer-name { font-family: var(--font-display); font-size: 0.9rem; font-style: italic; color: var(--text-mid); }
+    .footer-back {
+      font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-mid); text-decoration: none; transition: color 0.2s;
+    }
+    .footer-back:hover { color: var(--coral); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      .page-header { padding: 100px 24px 48px; }
+      .filter-bar { padding: 20px 24px; }
+      .grid-wrap { padding: 32px 24px; }
+      .samples-grid { grid-template-columns: 1fr 1fr; }
+      .sample-card.wide { grid-column: span 2; }
+      .contact-strip { padding: 36px 24px; }
+      footer { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
+    }
+    @media (max-width: 560px) {
+      .nav-links { display: none; }
+      .samples-grid { grid-template-columns: 1fr; }
+      .sample-card.wide { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-name">Keely Uchida</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html" class="active">Work Samples</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <span class="page-header-eyebrow">Selected Projects</span>
+    <h1>Work<span> Samples.</span></h1>
+    <p class="page-header-sub">Campaigns, strategy documents, and creative work spanning brand, social, email marketing, and editorial. Click any project to view the full work.</p>
+  </div>
+
+  <div class="filter-bar">
+    <span class="filter-label">Filter:</span>
+    <button class="filter-btn on" onclick="filter('all', this)">All</button>
+    <button class="filter-btn" onclick="filter('brand', this)">Brand &amp; Social</button>
+    <button class="filter-btn" onclick="filter('strategy', this)">Strategy</button>
+    <button class="filter-btn" onclick="filter('email', this)">Email</button>
+    <button class="filter-btn" onclick="filter('design', this)">Design</button>
+  </div>
+
+  <div class="grid-wrap">
+    <div class="samples-grid" id="grid">
+
+      <a class="sample-card" href="#" target="_blank" data-cat="brand">
+        <div class="sample-visual sv-coral">
+          <span class="sample-visual-tag svt-coral">Brand &amp; Social</span>
+          <span class="sample-num">01</span>
+          <p class="sample-visual-title">Find Your People</p>
+          <p class="sample-visual-sub">CalArts Dance · Admissions Campaign</p>
+        </div>
+        <div class="sample-body">
+          <p class="sample-title">Find Your People — CalArts Dance</p>
+          <p class="sample-desc">Social-first admissions campaign driving 30%+ follower growth and 17% YoY enrollment increase. Content direction, copywriting, and visual production for Instagram and Facebook.</p>
+          <span class="sample-cta">View Project</span>
+        </div>
+      </a>
+
+      <a class="sample-card" href="#" target="_blank" data-cat="strategy">
+        <div class="sample-visual sv-dark">
+          <span class="sample-visual-tag svt-coral">Campaign Strategy</span>
+          <span class="sample-num">02</span>
+          <p class="sample-visual-title">Trained to Break the Mold</p>
+          <p class="sample-visual-sub">CalArts Dance · Social Media Strategy</p>
+        </div>
+        <div class="sample-body">
+          <p class="sample-title">Trained to Break the Mold — CalArts Dance</p>
+          <p class="sample-desc">20-page social media campaign plan for the 2026–27 admissions cycle. SMART objectives, platform strategy, content calendar, competitive analysis, and real Instagram analytics data.</p>
+          <span class="sample-cta">View Project</span>
+        </div>
+      </a>
+
+      <a class="sample-card wide" href="#" target="_blank" data-cat="email">
+        <div class="sample-visual sv-gold">
+          <span class="sample-visual-tag svt-gold">Email Marketing</span>
+          <span class="sample-num">03</span>
+          <p class="sample-visual-title">Super Bowl LIX Campaign</p>
+          <p class="sample-visual-sub">Boudin Bakery · 3-Email Drip Series</p>
+        </div>
+        <div class="sample-body">
+          <p class="sample-title">Super Bowl LIX Campaign — Boudin Bakery</p>
+          <p class="sample-desc">3-email drip campaign for Boudin's limited-edition Super Bowl sourdough launch. Full concept, copywriting, and layout — featuring George Kittle and San Francisco brand heritage. Includes launch email, urgency follow-up, and 10-day countdown.</p>
+          <span class="sample-cta">View Project</span>
+        </div>
+      </a>
+
+      <a class="sample-card wide" href="#" target="_blank" data-cat="strategy">
+        <div class="sample-visual sv-teal">
+          <span class="sample-visual-tag svt-teal">Brand Strategy</span>
+          <span class="sample-num">04</span>
+          <p class="sample-visual-title">Luxury Residential Brand Launch</p>
+          <p class="sample-visual-sub">Santa Monica, CA · Audience Insights &amp; Creative Brief</p>
+        </div>
+        <div class="sample-body">
+          <p class="sample-title">Santa Monica Luxury Apartments — Creative Brief</p>
+          <p class="sample-desc">Full audience insights report and creative brief for a luxury apartment market entry. SWOT analysis, competitor positioning, target audience profiles, and complete brand messaging strategy.</p>
+          <span class="sample-cta">View Project</span>
+        </div>
+      </a>
+
+      <a class="sample-card" href="#" target="_blank" data-cat="strategy">
+        <div class="sample-visual sv-navy">
+          <span class="sample-visual-tag svt-teal">Strategy &amp; Writing</span>
+          <span class="sample-num">05</span>
+          <p class="sample-visual-title">Client Proposal &amp; Social Plan</p>
+          <p class="sample-visual-sub">Social Media Strategic Plan</p>
+        </div>
+        <div class="sample-body">
+          <p class="sample-title">Client Proposal &amp; Social Media Plan</p>
+          <p class="sample-desc">Research-backed client proposal and full social media strategic plan. Full-funnel thinking from audience analysis through content execution and measurement frameworks.</p>
+          <span class="sample-cta">View Project</span>
+        </div>
+      </a>
+
+      <a class="sample-card" href="#" target="_blank" data-cat="design">
+        <div class="sample-visual sv-slate">
+          <span class="sample-visual-tag svt-coral">Creative Design</span>
+          <span class="sample-num">06</span>
+          <p class="sample-visual-title">Emergent Forms</p>
+          <p class="sample-visual-sub">CalArts Dance · Event Launch Poster</p>
+        </div>
+        <div class="sample-body">
+          <p class="sample-title">Emergent Forms — BFA4 Capstone Poster</p>
+          <p class="sample-desc">Event launch poster for CalArts School of Dance's BFA4 capstone performance at REDCAT. Typography direction, visual composition, and print-ready design for May 2026.</p>
+          <span class="sample-cta">View Project</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <p class="contact-strip-text">Want to see more?</p>
+    <div class="contact-strip-links">
+      <a href="mailto:keelyuchida@gmail.com" class="btn-white">Get in Touch</a>
+      <a href="index.html" class="btn-white-outline">Back to Home</a>
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-name">Keely Uchida</span>
+    <a href="index.html" class="footer-back">← Back to Home</a>
+  </footer>
+
+  <script>
+    function filter(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('on'));
+      btn.classList.add('on');
+      document.querySelectorAll('.sample-card').forEach(card => {
+        if (cat === 'all' || card.dataset.cat === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
